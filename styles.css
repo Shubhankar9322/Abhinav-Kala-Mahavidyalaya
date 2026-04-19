@@ -31,12 +31,22 @@ nav {
     width: 90%;
     display: flex;
     justify-content: space-around;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+nav::-webkit-scrollbar {
+    display: none;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     font-size: 14px;
+    white-space: nowrap;
+    padding: 0 8px;
+    flex-shrink: 0;
 }
 
 nav a:hover {
@@ -666,6 +676,7 @@ marquee {
     gap: 30px;
     max-width: 1100px;
     margin: auto;
+    margin-bottom: 40px;
 }
 
 /* IMAGE */
@@ -703,14 +714,16 @@ marquee {
     nav {
         width: 95%;
         padding: 10px 0;
-        flex-wrap: wrap;
-        gap: 5px;
+        flex-wrap: nowrap;
+        gap: 0;
         border-radius: 20px;
+        overflow-x: auto;
     }
 
     nav a {
         font-size: 12px;
         padding: 8px 6px;
+        flex-shrink: 0;
     }
 
     /* Slider */
@@ -828,6 +841,7 @@ marquee {
     .about-page .about-card {
         padding: 20px;
         gap: 15px;
+        margin-bottom: 30px;
     }
 
     /* Activities */
@@ -917,21 +931,27 @@ marquee {
         font-size: 18px;
     }
 
-    /* Navigation */
+    /* Navigation - FIX FOR 2 LINE WRAP */
     nav {
         width: 100%;
         margin: 5px 0;
         padding: 8px 0;
-        gap: 3px;
+        gap: 0;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 15px;
     }
 
     nav a {
-        font-size: 11px;
-        padding: 6px 4px;
+        font-size: 10px;
+        padding: 6px 5px;
+        flex-shrink: 0;
+        white-space: nowrap;
     }
 
     nav a.active {
-        font-size: 11px;
+        font-size: 10px;
     }
 
     /* Updates Section */
@@ -1053,7 +1073,7 @@ marquee {
         font-size: 12px;
     }
 
-    /* About Cards */
+    /* About Cards - MAJOR FIX */
     .about-section {
         padding: 20px 10px;
     }
@@ -1061,7 +1081,7 @@ marquee {
     .about-card {
         padding: 15px;
         gap: 15px;
-        margin: 15px auto;
+        margin: 25px auto;
         width: 100%;
         flex-direction: column;
     }
@@ -1078,6 +1098,7 @@ marquee {
 
     .about-content p {
         font-size: 12px;
+        margin-bottom: 12px;
     }
 
     .about-page {
@@ -1087,6 +1108,7 @@ marquee {
     .about-page .about-card {
         padding: 15px;
         gap: 15px;
+        margin-bottom: 35px;
     }
 
     .about-page .about-img img {
