@@ -757,30 +757,30 @@ marquee {
 @media (max-width: 768px) {
     /* Header */
     header {
-        padding: 15px;
-        border-bottom: 3px solid #ffd700;
+        padding: 12px 5px;
     }
 
     header h1 {
-        font-size: 22px;
+        font-size: 18px;
+        padding: 0 50px;
     }
 
-    header-logo img {
-        width: 45px;
-        height: 45px;
+    .header-logo img {
+        width: 50px;
+        height: 50px;
     }
 
     .header-logo.left {
-        left: 10px;
+        left: 8px;
     }
 
     .header-logo.right {
-        right: 10px;
+        right: 8px;
     }
 
     .header h1 {
-        font-size: 20px;
-        padding: 0 60px; /* prevents overlap with logos */
+        font-size: 16px;
+        padding: 0 50px;
     }
 
     /* Navigation */
@@ -812,6 +812,7 @@ marquee {
     {
         position: relative;
         z-index: 1;
+        height: 250px;
     }
 
     .overlay {
@@ -1013,12 +1014,25 @@ marquee {
 @media (max-width: 480px) {
     /* Header */
     header {
-        padding: 10px;
-        border-bottom: 2px solid #ffd700;
+        padding: 8px 5px;
     }
 
     header h1 {
-        font-size: 18px;
+        font-size: 14px;
+        padding: 0 45px;
+    }
+
+    .header-logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .header-logo.left {
+        left: 5px;
+    }
+
+    .header-logo.right {
+        right: 5px;
     }
 
     /* Navigation - FIXED FOR LOGOS */
