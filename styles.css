@@ -1,4 +1,4 @@
-* {
+﻿* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,33 +14,58 @@ header {
     background: #ffffff;
     padding: 15px;
     text-align: center;
-    border-bottom: 1px solid #ddd;
+    border-bottom: none;
 }
 
 header h1 {
     font-size: 28px;
     color: #b08d57;
+    line-height: 1.3;
 }
 
-/* NAVBAR */
-nav {
+/* NAVBAR WITH LOGOS */
+.navbar-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
     background: #7e7ea5;
-    padding: 12px 0;
-    border-radius: 40px;
+
+    padding: 5px 15px;
+
+    border-radius: 30px;
     margin: 10px auto;
     width: 90%;
-    display: flex;
-    justify-content: space-around;
+
     flex-wrap: nowrap;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
 }
 
-nav::-webkit-scrollbar {
+.navbar-wrapper::-webkit-scrollbar {
     display: none;
 }
 
-nav a {
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.navbar-logo img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.navbar-center {
+    display: flex;
+    justify-content: space-around;
+    gap: 8px;
+    flex: 1;
+}
+
+.navbar-center a {
     color: white;
     text-decoration: none;
     font-size: 14px;
@@ -49,30 +74,56 @@ nav a {
     flex-shrink: 0;
 }
 
-nav a:hover {
+.navbar-center a:hover {
     text-decoration: underline;
 }
 
-/* SLIDER */
-.slider {
+/* HEADER WITH CORNER LOGOS */
+.header {
+    position: relative;
+    background: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 28px;
+    color: #b08d57;
+    line-height: 1.3;
+}
+
+/* LOGOS */
+.header-logo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header-logo img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+}
+
+/* LEFT */
+.header-logo.left {
+    left: 30px;
+}
+
+/* RIGHT */
+.header-logo.right {
+    right: 30px;
+}
+
+/* HERO SECTION (REPLACES SLIDER) */
+.hero-section {
     position: relative;
     width: 100%;
     height: 400px;
     overflow: hidden;
 }
 
-.slides {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slide {
-    min-width: 100%;
-    height: 400px;
-    position: relative;
-}
-
-.slide img {
+.hero-section img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -84,16 +135,19 @@ nav a:hover {
     top: 30%;
     left: 10%;
     color: white;
+    z-index: 10;
 }
 
 .overlay h2 {
     font-size: 40px;
+    margin-bottom: 10px;
 }
 
 .overlay p {
     margin-top: 10px;
     font-size: 16px;
     width: 60%;
+    margin-bottom: 15px;
 }
 
 .btn {
@@ -106,17 +160,30 @@ nav a:hover {
     cursor: pointer;
 }
 
-/* UPDATES */
-.updates {
-    background: transparent;
-    padding: 0;
-    margin: 20px auto;
-    border-radius: 0;
-    max-width: 900px;
-    width: 90%;
+/* PROFILE SECTION - COMBINED WITH UPDATES */
+.profile-section {
+    background: #e8e8e8;
+    padding: 50px 20px;
+    position: relative;
 }
 
-.updates h3 {
+.updates-marquee {
+    background: white;
+    max-width: 900px;
+    width: 90%;
+
+    margin: -80px auto 0;   /* stronger overlap */
+
+    position: relative;
+    z-index: 30;
+
+    border-radius: 25px 25px 0 0;
+    padding-top: 20px;
+
+   /* box-shadow: 0 10px 25px rgba(0,0,0,0.2); */
+}
+
+.updates-marquee h3 {
     text-align: center;
     margin-bottom: 15px;
     color: #3a66ff;
@@ -125,9 +192,10 @@ nav a:hover {
 
 .updates-container {
     background: white;
-    border-radius: 25px;
+    border-radius: 0;
     padding: 20px 30px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: none;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 marquee {
@@ -136,28 +204,18 @@ marquee {
     font-size: 15px;
 }
 
-/* PROFILE SECTION WRAPPER */
-.profile-section {
-    background: #e8e8e8;
-    padding: 50px 20px;
-}
-
-/* PROFILE (UPDATED - MATCH ABOUT STYLE) */
+/* PROFILE CARD (BOTTOM PART - SAME BOX) */
 .profile {
     display: flex;
     align-items: flex-start;
     gap: 25px;
-
     padding: 35px;
     margin: 0 auto;
-
     background: white;
-    border-radius: 25px;
-
-    max-width: 950px;
+    border-radius: 0 0 25px 25px;
+    max-width: 900px;
     width: 90%;
-
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 /* IMAGE */
@@ -199,7 +257,6 @@ marquee {
     background: #f8f8f8;
 }
 
-/* use a fixed inner width so headings and cards share the same left edge */
 .courses > .section-subtitle,
 .courses > .section-title,
 .courses > .section-desc,
@@ -209,7 +266,6 @@ marquee {
     margin-right: auto;
 }
 
-/* headings */
 .section-subtitle {
     color: #3a66ff;
     font-size: 18px;
@@ -229,17 +285,15 @@ marquee {
     text-align: left;
 }
 
-/* CARDS: constrain to same inner width and start from left of that width */
 .course-container {
     display: flex;
-    gap: 24px;            /* reduced gap so 4 cards fit in one row */
+    gap: 24px;
     justify-content: flex-start;
     flex-wrap: wrap;
     margin-bottom: 20px;
     max-width: 960px;
 }
 
-/* keep card sizing (adjust width if you need more spacing) */
 .course-card {
     background: white;
     border-radius: 15px;
@@ -271,7 +325,6 @@ marquee {
     color: #888;
 }
 
-/* BUTTON */
 .view-all-btn {
     display: block;
     margin: 30px auto;
@@ -282,6 +335,7 @@ marquee {
     border-radius: 20px;
     cursor: pointer;
 }
+
 /* NOTICE + UPDATES */
 .notice-updates {
     display: flex;
@@ -290,7 +344,6 @@ marquee {
     background: #eaeaea;
 }
 
-/* LEFT */
 .notices {
     width: 50%;
 }
@@ -299,7 +352,6 @@ marquee {
     margin-bottom: 15px;
 }
 
-/* TABLE BOX */
 .notice-table {
     background: white;
     border-radius: 10px;
@@ -308,7 +360,6 @@ marquee {
     padding: 10px;
 }
 
-/* TABLE */
 .notice-table table {
     width: 100%;
     border-collapse: collapse;
@@ -326,7 +377,6 @@ marquee {
     background: #f0f0f0;
 }
 
-/* BUTTON */
 .read-more {
     margin-top: 10px;
     padding: 8px 15px;
@@ -336,7 +386,6 @@ marquee {
     cursor: pointer;
 }
 
-/* RIGHT SIDE */
 .updates-section {
     width: 50%;
 }
@@ -345,7 +394,6 @@ marquee {
     margin-bottom: 15px;
 }
 
-/* UPDATE CARDS */
 .update-card {
     background: white;
     border-radius: 10px;
@@ -365,7 +413,6 @@ marquee {
     background: #ccc;
 }
 
-/* BUTTON */
 .click-btn {
     padding: 8px 15px;
     background: #3a66ff;
@@ -375,13 +422,11 @@ marquee {
     cursor: pointer;
 }
 
-/* LINK STYLE */
 .link {
     color: #3a66ff;
     font-size: 14px;
 }
 
-/* SLIDER */
 .updates-slider {
     overflow: hidden;
     width: 100%;
@@ -396,7 +441,6 @@ marquee {
     min-width: 100%;
 }
 
-/* DOTS */
 .dots {
     text-align: center;
     margin-top: 10px;
@@ -426,23 +470,6 @@ marquee {
     background: #fff;
 }
 
-.section-subtitle {
-    color: #3a66ff;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-.section-title {
-    font-size: 28px;
-    margin-bottom: 10px;
-}
-
-.section-desc {
-    color: #666;
-    margin-bottom: 30px;
-}
-
-/* CARDS */
 .activities-container {
     display: flex;
     gap: 20px;
@@ -475,7 +502,6 @@ marquee {
     line-height: 1.5;
 }
 
-/* BUTTON */
 .view-btn-container {
     text-align: center;
     margin-top: 20px;
@@ -500,7 +526,6 @@ marquee {
     text-align: center;
 }
 
-/* CARD */
 .about-card {
     background: #fff;
     margin: 30px auto;
@@ -513,7 +538,6 @@ marquee {
     box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
-/* IMAGE */
 .about-img img {
     width: 250px;
     height: 250px;
@@ -522,7 +546,6 @@ marquee {
     background: #ddd;
 }
 
-/* CONTENT */
 .about-content h3 {
     margin-bottom: 10px;
 }
@@ -533,7 +556,6 @@ marquee {
     line-height: 1.6;
 }
 
-/* BUTTON ALIGN */
 .about-content .view-all-btn {
     margin-top: 10px;
 }
@@ -706,33 +728,62 @@ marquee {
 /* Tablet and below (768px) */
 @media (max-width: 768px) {
     /* Header */
+    header {
+        padding: 15px;
+        border-bottom: 3px solid #ffd700;
+    }
+
     header h1 {
         font-size: 22px;
     }
 
+    header-logo img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .header-logo.left {
+        left: 10px;
+    }
+
+    .header-logo.right {
+        right: 10px;
+    }
+
+    .header h1 {
+        font-size: 20px;
+        padding: 0 60px; /* prevents overlap with logos */
+    }
+
     /* Navigation */
-    nav {
+    .navbar-wrapper {
         width: 95%;
-        padding: 10px 0;
+        padding: 7px 12px;
         flex-wrap: nowrap;
-        gap: 0;
+        gap: 10px;
         border-radius: 20px;
         overflow-x: auto;
     }
 
-    nav a {
+    .navbar-logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .navbar-center {
+        gap: 5px;
+    }
+
+    .navbar-center a {
         font-size: 12px;
-        padding: 8px 6px;
-        flex-shrink: 0;
+        padding: 0 6px;
     }
 
-    /* Slider */
-    .slider {
-        height: 300px;
-    }
-
-    .slide {
-        height: 300px;
+    /* Hero Section */
+    .hero-section 
+    {
+        position: relative;
+        z-index: 1;
     }
 
     .overlay {
@@ -747,6 +798,16 @@ marquee {
     .overlay p {
         font-size: 14px;
         width: 100%;
+    }
+
+    /* Updates - Overlapping */
+    .updates-marquee {
+        margin: -40px auto 0;
+        width: 95%;
+    }
+
+    .updates-container {
+        padding: 15px 20px;
     }
 
     /* Profile Section */
@@ -925,56 +986,45 @@ marquee {
     /* Header */
     header {
         padding: 10px;
+        border-bottom: 2px solid #ffd700;
     }
 
     header h1 {
         font-size: 18px;
     }
 
-    /* Navigation - FIX FOR 2 LINE WRAP */
-    nav {
+    /* Navigation - FIXED FOR LOGOS */
+    .navbar-wrapper {
         width: 100%;
         margin: 5px 0;
-        padding: 8px 0;
-        gap: 0;
+        padding: 6px 10px;
+        gap: 8px;
         flex-wrap: nowrap;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         border-radius: 15px;
     }
 
-    nav a {
+    .navbar-logo img {
+        width: 35px;
+        height: 35px;
+        flex-shrink: 0;
+    }
+
+    .navbar-center {
+        gap: 4px;
+        flex: 1;
+    }
+
+    .navbar-center a {
         font-size: 10px;
-        padding: 6px 5px;
+        padding: 0 4px;
         flex-shrink: 0;
         white-space: nowrap;
     }
 
-    nav a.active {
-        font-size: 10px;
-    }
-
-    /* Updates Section */
-    .updates {
-        width: 95%;
-        margin: 15px auto;
-    }
-
-    .updates-container {
-        padding: 15px 20px;
-        border-radius: 15px;
-    }
-
-    marquee {
-        font-size: 13px;
-    }
-
-    /* Slider */
-    .slider {
-        height: 200px;
-    }
-
-    .slide {
+    /* Hero Section */
+    .hero-section {
         height: 200px;
     }
 
@@ -997,6 +1047,26 @@ marquee {
         font-size: 12px;
     }
 
+    /* Updates Section */
+    .updates-marquee {
+        width: 95%;
+        margin: -30px auto 0;
+    }
+
+    .updates-container {
+        padding: 12px 15px;
+        border-radius: 15px 15px 0 0;
+    }
+
+    .updates-marquee h3 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    marquee {
+        font-size: 12px;
+    }
+
     /* Profile */
     .profile-section {
         padding: 20px 10px;
@@ -1006,6 +1076,7 @@ marquee {
         padding: 15px;
         width: 100%;
         flex-direction: column;
+        border-radius: 0 0 15px 15px;
     }
 
     .profile img {
