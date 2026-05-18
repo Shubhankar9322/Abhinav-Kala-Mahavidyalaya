@@ -48,3 +48,32 @@ function scrollGallery(direction) {
 
     container.scrollLeft += direction * scrollAmount;
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all course buttons
+    const buttons = document.querySelectorAll('.course-btn');
+    
+    // Add click event listener to each button
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Get the course number from data attribute
+            const courseId = this.getAttribute('data-course');
+            
+            // Remove active class from all buttons
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Hide all course details
+            const courseDetails = document.querySelectorAll('.course-detail');
+            courseDetails.forEach(detail => detail.classList.remove('active'));
+            
+            // Show the selected course detail
+            const selectedCourse = document.getElementById(`course-${courseId}`);
+            if (selectedCourse) {
+                selectedCourse.classList.add('active');
+            }
+        });
+    });
+});
