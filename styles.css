@@ -1904,3 +1904,11 @@ marquee {
     text-justify: inter-word;
     hyphens: auto;
 }
+    .course-detail-content p a,
+    .about-page .about-content p a {
+        overflow-wrap: anywhere;
+        word-wrap: break-word;
+        word-break: break-word;
+        white-space: normal;
+        max-width: 100%;
+    }
