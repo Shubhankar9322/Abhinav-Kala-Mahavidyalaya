@@ -10,6 +10,63 @@ setInterval(() => {
     slides.style.transform = `translateX(-${index * 100}%)`;
 }, 2000);
 
+<script>
+    function handleSubmit(event) {
+        event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    // Get form values
+    const fullName = form.querySelector('input[placeholder="Full Name"]').value;
+    const subject = form.querySelector('input[placeholder="Subject"]').value;
+    const phone = form.querySelector('input[placeholder="Phone Number"]').value;
+    const email = form.querySelector('input[placeholder="Email Id"]').value;
+    const city = form.querySelector('input[placeholder="City"]').value;
+    const state = form.querySelector('input[placeholder="State"]').value;
+    const address = form.querySelector('textarea[placeholder="Address"]').value;
+    const message = form.querySelector('textarea[placeholder="Message"]').value;
+
+    // Create email content
+    const emailContent = `
+    Name: ${fullName}
+    Email: ${email}
+    Phone: ${phone}
+    Subject: ${subject}
+    City: ${city}
+    State: ${state}
+    Address: ${address}
+    Message: ${message}
+    `;
+
+    // Send to backend
+    fetch('send-email.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            fullName: fullName,
+            email: email,
+            phone: phone,
+            subject: subject,
+            city: city,
+            state: state,
+            address: address,
+            message: message
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert('Message sent successfully!');
+        form.reset();
+    })
+    .catch(error => {
+        alert('Error sending message. Please try again.');
+        console.error('Error:', error);
+    });
+}
+</script>
 
 // UPDATE SLIDER
 let currentSlide = 0;
@@ -48,6 +105,18 @@ function scrollGallery(direction) {
 
     container.scrollLeft += direction * scrollAmount;
 }
+
+const galleryWrapper = document.querySelector('.gallery-wrapper');
+let scrollAmount = 0;
+
+setInterval(() => {
+    scrollAmount += 2;
+    galleryWrapper.scrollLeft = scrollAmount;
+
+    if (galleryWrapper.scrollLeft >= galleryWrapper.scrollWidth / 2) {
+        scrollAmount = 0;
+    }
+}, 30);
 
 document.addEventListener('DOMContentLoaded', function() {
     // Get all course buttons
