@@ -175,39 +175,25 @@ header h1 {
 }
 
 /* /* PROFILE CARD (BOTTOM PART - SAME BOX) */
-.profile {
-    display: flex; /* PROFILE CARD (BOTTOM PART - SAME BOX) */
-    align-items: flex-start;
-    gap: 25px;
-    padding: 35px;
-    margin: 0 auto;
-    background: #efeee8;
-    border-radius: 0 0 25px 25px;
-    max-width: 1200px;
-    width: 90%;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-} 
-COMBINED WITH UPDATES 
+
+/* PROFILE-SECTION (line 191) */
+/* PROFILE-SECTION */
 .profile-section {
     background: #e8e8e8;
-    padding: 50px 20px;
+    padding: 50px 100px;
     position: relative;
 }
 
+/* UPDATES-MARQUEE */
 .updates-marquee {
     background: #efeee8;
-    max-width: 1200px;
-    width: 95%;
-
-    margin: -80px auto 0;   /* stronger overlap */
-
+    max-width: none;
+    width: 100%;
+    margin: -80px 0 0;
     position: relative;
     z-index: 30;
-
     border-radius: 25px 25px 0 0;
-    padding-top: 20px;
-
-   /* box-shadow: 0 10px 25px rgba(0,0,0,0.2); */
+    padding: 20px 30px;
 }
 
 .updates-marquee h3 {
@@ -231,17 +217,17 @@ marquee {
     font-size: 15px;
 }
 
-/* PROFILE CARD (BOTTOM PART - SAME BOX) */
+/* PROFILE */
 .profile {
     display: flex;
     align-items: flex-start;
     gap: 25px;
-    padding: 35px;
-    margin: 0 auto;
+    padding: 35px 50px;
+    margin: 0;
     background: #efeee8;
-    border-radius: 0 0 25px 25px;
-    max-width: 1200px;
-    width: 95%;
+    border-radius: 0;
+    max-width: none;
+    width: 100%;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
@@ -254,23 +240,28 @@ marquee {
     flex-shrink: 0;
 }
 
+.highlight-orange {
+    color: #ed2c42;
+    font-weight: bold;
+}
+
 /* TEXT */
 .profile-details {
     flex: 1;
 }
 
-.profile-details h2 {
-    margin-bottom: 8px;
-    font-size: 24px;
-    color: #222;
-}
+    .profile-details h2 {
+        margin-bottom: 8px;
+        font-size: 24px;
+        color: #ed2c42;
+    }
 
-.profile-details h4 {
-    color: #fd642b;
-    margin-bottom: 12px;
-    font-size: 16px;
-    font-weight: 600;
-}
+    .profile-details h4 {
+        color: #ed2c42;
+        margin-bottom: 12px;
+        font-size: 16px;
+        font-weight: 600;
+    }
 
 .profile-details p {
     color: black;
