@@ -114,8 +114,8 @@ header h1 {
 }
 
 .header-logo img {
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 130px;
     object-fit: contain;
 }
 
@@ -174,7 +174,20 @@ header h1 {
     cursor: pointer;
 }
 
-/* PROFILE SECTION - COMBINED WITH UPDATES */
+/* /* PROFILE CARD (BOTTOM PART - SAME BOX) */
+.profile {
+    display: flex; /* PROFILE CARD (BOTTOM PART - SAME BOX) */
+    align-items: flex-start;
+    gap: 25px;
+    padding: 35px;
+    margin: 0 auto;
+    background: #efeee8;
+    border-radius: 0 0 25px 25px;
+    max-width: 1200px;
+    width: 90%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+} 
+COMBINED WITH UPDATES 
 .profile-section {
     background: #e8e8e8;
     padding: 50px 20px;
@@ -1011,6 +1024,7 @@ marquee {
         padding-left: 20px;
         font-size: 28px;
     }
+
 }
 
 /* Mobile phones (480px and below) */
