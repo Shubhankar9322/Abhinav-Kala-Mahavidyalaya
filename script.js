@@ -110,3 +110,35 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+// Handle course tab switching
+document.querySelectorAll('.course-btn').forEach(btn => {
+    btn.addEventListener('click', function () {
+        const courseId = this.dataset.course;
+        switchCourse(courseId);
+    });
+});
+
+function switchCourse(courseId) {
+    // Hide all course details
+    document.querySelectorAll('.course-detail').forEach(detail => {
+        detail.classList.remove('active');
+    });
+
+    // Remove active class from all buttons
+    document.querySelectorAll('.course-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+
+    // Show selected course and mark button as active
+    document.getElementById('course-' + courseId).classList.add('active');
+    document.querySelector(`[data-course="${courseId}"]`).classList.add('active');
+}
+
+// Handle URL hash on page load
+window.addEventListener('load', function () {
+    const hash = window.location.hash.substring(1); // Remove the '#'
+    if (hash.startsWith('course-')) {
+        const courseId = hash.split('-')[1];
+        switchCourse(courseId);
+    }
+});
