@@ -793,6 +793,8 @@ marquee {
     line-height: 1.5;
 }
 
+
+
 /* MOBILE RESPONSIVE - PREVENT CROPPING */
 @media (max-width: 768px) {
     .line3 {
