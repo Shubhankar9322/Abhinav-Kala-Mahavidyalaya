@@ -2145,6 +2145,20 @@ marquee {
     }
 }
 
+
+@media (max-width: 768px) {
+    .gallery-card {
+        min-width: 180px; /* keep cards usable on small screens */
+    }
+
+        .gallery-card img {
+            height: auto !important;
+            aspect-ratio: 4 / 3;
+            max-height: 260px;
+            object-fit: contain !important;
+        }
+}
+
 @media (max-width: 480px) {
     .faculty-grid {
         grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
