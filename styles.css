@@ -2112,6 +2112,63 @@ marquee {
         font-size: 14px;
     }
 
+/* Find the .faculty-card img section (around line 1857) and update it:
+   Change object-fit from 'cover' to 'contain' to prevent cropping */
+
+.faculty-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain; /* Changed from 'cover' to 'contain' */
+    border-radius: 8px;
+    background: #ddd;
+}
+
+/* Add this mobile responsiveness for faculty grid - add AFTER the existing mobile media query for members */
+
+@media (max-width: 768px) {
+    .faculty-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .faculty-card {
+        padding: 10px;
+    }
+
+        .faculty-card img {
+            height: 120px;
+        }
+
+    .f-name {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .faculty-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .faculty-card {
+        padding: 8px;
+    }
+
+        .faculty-card img {
+            height: 100px;
+        }
+
+    .f-name {
+        font-size: 11px;
+    }
+
+        .f-name small {
+            font-size: 10px;
+        }
+}
+
 /* responsive: stack images on smaller screens */
 @media (max-width: 768px) {
     .about-images {
