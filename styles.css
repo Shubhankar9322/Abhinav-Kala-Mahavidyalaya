@@ -670,7 +670,7 @@ marquee {
 
     .gallery-card img {
         width: 100%;
-        height: 200px;
+        height: 350px;
         object-fit: cover;
         background: #e8e8e8;
     }
@@ -1066,10 +1066,6 @@ marquee {
     /* Gallery */
     .gallery-card {
         min-width: 250px;
-    }
-
-    .gallery-card img {
-        height: 150px;
     }
 
     .gallery-controls {
@@ -1715,6 +1711,110 @@ marquee {
     text-decoration: underline;
 }
 
+
+/* --- Members page specific styles (append to styles.css) --- */
+
+.members-page {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.members-sidebar .course-btn {
+    text-align: left;
+    padding: 12px 18px;
+    border-radius: 22px;
+    background: #e9e9f2;
+    color: #333;
+}
+
+    .members-sidebar .course-btn.active {
+        background: linear-gradient(135deg,#3a66ff,#5a4bd8);
+        color: #fff;
+        box-shadow: 0 6px 18px rgba(58,102,255,0.15);
+    }
+
+.tab-content {
+    display: none;
+}
+
+    .tab-content.active-tab {
+        display: block;
+    }
+
+/* Principal image block: already styled inline in HTML; grid below for faculty cards */
+.faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+    gap: 18px;
+    margin-bottom: 8px;
+}
+
+.faculty-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.04);
+}
+
+    .faculty-card img {
+        width: 100%;
+        height: 140px;
+        object-fit: cover;
+        border-radius: 8px;
+        background: #ddd;
+    }
+
+.f-name {
+    font-size: 13px;
+    color: #333;
+    margin-top: 8px;
+    line-height: 1.2;
+}
+
+    .f-name small {
+        color: #888;
+        font-size: 12px;
+        display: block;
+        margin-top: 6px;
+    }
+
+/* off-white container for all faculty image grids */
+.faculty-grid {
+    background: #fbfbfb; /* off-white */
+    padding: 18px; /* space around cards */
+    border-radius: 12px; /* rounded corners */
+    gap: 18px; /* keep existing gap */
+    margin-bottom: 18px; /* a bit more breathing room */
+}
+
+
+/* responsive tweaks */
+@media (max-width:900px) {
+    .courses-wrapper {
+        flex-direction: column;
+    }
+
+    .members-sidebar {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        margin-bottom: 12px;
+        overflow: auto;
+    }
+
+        .members-sidebar .course-btn {
+            min-width: 160px;
+            white-space: nowrap;
+        }
+
+    .faculty-card img {
+        height: 120px;
+    }
+}
+
 /* ===== MOBILE RESPONSIVE ===== */
 
 @media (max-width: 768px) {
@@ -1967,6 +2067,61 @@ marquee {
         .map-info p strong {
             color: #333;
         }
+
+/* add near the existing about / gallery styles (members area) */
+/* Two-image horizontal layout for about page */
+.about-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+    align-items: start;
+}
+
+.about-img-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.04);
+    text-align: center;
+}
+
+    .about-img-card img {
+        width: 100%;
+        height: 260px; /* keep a consistent box height */
+        object-fit: contain; /* show whole image without cropping */
+        background: #f6f6f6; /* neutral fill for letterbox areas */
+        border-radius: 10px;
+        display: block;
+    }
+
+.about-caption {
+    margin-top: 10px;
+}
+
+    .about-caption h4 {
+        margin: 6px 0 4px;
+        font-size: 16px;
+        color: #222;
+    }
+
+    .about-caption p {
+        margin: 0;
+        color: #666;
+        font-size: 14px;
+    }
+
+/* responsive: stack images on smaller screens */
+@media (max-width: 768px) {
+    .about-images {
+        grid-template-columns: 1fr;
+    }
+
+    .about-img-card img {
+        height: 200px;
+    }
+}
 
 /* RESPONSIVE STYLES */
 @media (max-width: 768px) {
