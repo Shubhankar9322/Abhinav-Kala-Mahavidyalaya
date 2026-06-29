@@ -2123,6 +2123,18 @@ marquee {
     background: #ddd;
 }
 
+/* ===== fix: center faculty cards without changing image sizes or grid layout ===== */
+.courses-content .tab-content .faculty-grid {
+    justify-content: center; /* center the grid tracks as a whole */
+}
+
+    /* prevent each card from stretching to the full track and center it inside its cell */
+    .courses-content .tab-content .faculty-grid .faculty-card {
+        justify-self: center; /* center the card in the grid cell */
+        max-width: 150px; /* matches the min width used by the grid cells */
+        margin: 0; /* keep layout consistent */
+    }
+
 /* Add this mobile responsiveness for faculty grid - add AFTER the existing mobile media query for members */
 
 @media (max-width: 768px) {
