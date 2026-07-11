@@ -1,0 +1,316 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gallery - Abhinav Kala Mahavidyalaya</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .gallery-hero {
+            height: 200px;
+            background: url('images/Building.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            padding-left: 40px;
+            color: white;
+            font-size: 34px;
+            font-size: 34px;
+            font-weight: 700;
+        }
+
+        /* Tab Navigation Styling */
+        .gallery-tabs {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 12px 35px;
+            border: none;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            background-color: #c0c0c0;
+            color: #333;
+        }
+
+            .tab-btn.active {
+                background-color: #3a66ff;
+                color: white;
+            }
+
+            .tab-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+            .gallery-item:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            }
+
+            .gallery-item img {
+                width: 100%;
+                height: 250px;
+                object-fit: cover;
+                display: block;
+            }
+
+        /* Tab Content */
+        .gallery-tab-content {
+            display: none;
+        }
+
+            .gallery-tab-content.active-gallery-tab {
+                display: block;
+                animation: fadeIn 0.3s ease;
+            }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+        }
+
+            .empty-state p {
+                font-size: 16px;
+            }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-logo left">
+            <img src="images/bhartiykalaprasarini.jpg" alt="Bharatiya Kala Prasarini Sabha Logo">
+        </div>
+
+        <h1>
+            <span class="line1">भारतीय कला प्रसारिणी सभेचे </span><br>
+            <span class="line3">अभिनव कला महाविद्यालय टिळक पथ व पाषाण, पुणे.</span>
+        </h1>
+
+        <div class="header-logo right">
+            <img src="images/GOLDEN COLOUR SYM.LOGO_ABHINAV.jpg" alt="College Logo">
+        </div>
+    </header>
+
+    <nav class="navbar-wrapper">
+        <div class="navbar-center">
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT US</a>
+            <a href="members.html">MEMBER OF FACULTIES</a>
+            <a href="courses.html">COURSES</a>
+            <a href="gallery.html" class="active">GALLERY</a>
+            <a href="contact.html">CONTACT US</a>
+        </div>
+    </nav>
+
+    <section class="gallery-hero">Gallery</section>
+
+    <main class="courses-container" style="padding: 30px 15px;">
+        <div class="courses-wrapper" style="flex-direction: column;">
+
+            <!-- Tab Navigation -->
+            <div class="gallery-tabs">
+                <button class="tab-btn active" data-target="photo-gallery">PHOTO GALLERY</button>
+                <!--<button class="tab-btn" data-target="event">EVENT</button>-->
+                <!--<button class="tab-btn" data-target="video">VIDEO</button>-->
+            </div>
+
+    <!-- PHOTO GALLERY TAB -->
+                <div id="photo-gallery" class="gallery-tab-content active-gallery-tab">
+                    <div class="gallery-grid">
+                        <!-- Replace with actual image paths from your collection -->
+                        <div class="gallery-item">
+                            <img src="images/gallery/photo1.jpg" alt="Gallery Photo 1">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/gallery/photo2.jpg" alt="Gallery Photo 2">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/gallery/photo3.jpg" alt="Gallery Photo 3">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/gallery/photo4.jpg" alt="Gallery Photo 4">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/gallery/photo5.jpg" alt="Gallery Photo 5">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/gallery/photo6.jpg" alt="Gallery Photo 6">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/gallery/photo7.jpg" alt="Gallery Photo 7">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/gallery/photo8.jpg" alt="Gallery Photo 8">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/gallery/photo9.jpg" alt="Gallery Photo 9">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EVENT TAB -->
+                <div id="event" class="gallery-tab-content">
+                    <div class="gallery-grid">
+                        <!-- Replace with actual event image paths -->
+                        <div class="gallery-item">
+                            <img src="images/gallery/event1.jpg" alt="Event 1">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/gallery/event2.jpg" alt="Event 2">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/gallery/event3.jpg" alt="Event 3">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/gallery/event4.jpg" alt="Event 4">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/gallery/event5.jpg" alt="Event 5">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/gallery/event6.jpg" alt="Event 6">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VIDEO TAB -->
+                <div id="video" class="gallery-tab-content">
+                    <div class="gallery-grid">
+                        <!-- Replace with actual video thumbnail image paths -->
+                        <div class="gallery-item">
+                            <img src="images/gallery/video1.jpg" alt="Video 1">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/gallery/video2.jpg" alt="Video 2">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/gallery/video3.jpg" alt="Video 3">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/gallery/video4.jpg" alt="Video 4">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/gallery/video5.jpg" alt="Video 5">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/gallery/video6.jpg" alt="Video 6">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </main>
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <!-- QUICK LINKS -->
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="members.html">Members of faculty</a></p>
+                <p><a href="courses.html">Courses</a></p>
+                <p><a href="#">Events</a></p>
+                <p><a href="gallery.html" class="active">Gallery</a></p>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+
+                <p>अभिनव कला महाविद्यालय,</p>
+                <p>२०४३, सदाशिव पेठ, चित्रकलाचार्य पुरम चौक, टिळक पथ, पुणे - ४११०३०.</p>
+                <p>०२०-२४३२५४२८</p>
+
+                <p>abhinavkalamahavidyalaya@gmail.com</p><br>
+
+                <p>अभिनव कला महाविद्यालय,</p>
+                <p>पाषाण-सुस रोड, पाषाण, पुणे - ४११०२१.</p>
+                <p>०२०-६५२२२६७८</p>
+
+                <p>akmvpashan@gmail.com<br>
+
+            </div>
+
+            <!-- SOCIAL -->
+            <div class="footer-col">
+                <h3>Follow Us</h3>
+                <p>Twitter</p>
+                <p>YouTube</p>
+                <p>Instagram</p>
+                <p>Facebook</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 abhinavkalamahavidyalaya.com All rights reserved.
+        </div>
+
+    </footer>
+
+    <div class="footer-bar">
+        <p>© Abhinav Kala Mahavidyalaya, 2026-2028</p>
+        <p>This website is Managed and Maintained by Mudra Pictures</p>
+    </div>
+
+    <script>// Gallery tab switching
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                // Remove active class from all buttons
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+
+                // Hide all tab contents
+                document.querySelectorAll('.gallery-tab-content').forEach(tc => {
+                    tc.classList.remove('active-gallery-tab');
+                });
+
+                // Show targeted tab content
+                const target = this.getAttribute('data-target');
+                document.getElementById(target).classList.add('active-gallery-tab');
+            });
+        });</script>
+
+</body>
+</html>
